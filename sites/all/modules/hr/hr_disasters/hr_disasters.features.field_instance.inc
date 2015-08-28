@@ -264,6 +264,56 @@ function hr_disasters_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-hr_disaster-field_sync_disaster'
+  $field_instances['node-hr_disaster-field_sync_disaster'] = array(
+    'bundle' => 'hr_disaster',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Sync this Disaster with ReliefWeb? If set, this disaster will always be updated to match with ReliefWeb. Leave this option empty to be able to edit, for example, the title later.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 9,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_sync_disaster',
+    'label' => 'Sync Disaster',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 13,
+    ),
+  );
+
   // Exported field_instance: 'node-hr_disaster-group_access'
   $field_instances['node-hr_disaster-group_access'] = array(
     'bundle' => 'hr_disaster',
@@ -642,6 +692,8 @@ function hr_disasters_field_default_field_instances() {
   t('Reliefweb ID');
   t('Space(s)');
   t('Status');
+  t('Sync Disaster');
+  t('Sync this Disaster with ReliefWeb? If set, this disaster will always be updated to match with ReliefWeb. Leave this option empty to be able to edit, for example, the title later.');
   t('Title');
 
   return $field_instances;
