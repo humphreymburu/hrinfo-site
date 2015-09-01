@@ -220,7 +220,7 @@ function hr_disasters_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => 'Sync this Disaster with ReliefWeb? If set, this disaster will always be updated to match with ReliefWeb. Leave this option empty to be able to edit, for example, the title later.',
+    'description' => 'Do not Sync this Disaster with ReliefWeb? If set, this disaster will not be updated to match with ReliefWeb.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -244,7 +244,7 @@ function hr_disasters_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_hr_disaster_sync_disaster',
-    'label' => 'Sync Disaster',
+    'label' => 'Don\'t Sync Disaster',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -684,6 +684,8 @@ function hr_disasters_field_default_field_instances() {
   t('Body');
   t('Description');
   t('Determine if this is an OG group.');
+  t('Do not Sync this Disaster with ReliefWeb? If set, this disaster will not be updated to match with ReliefWeb.');
+  t('Don\'t Sync Disaster');
   t('GLIDE Number');
   t('GLIDE Type');
   t('Group');
@@ -692,8 +694,6 @@ function hr_disasters_field_default_field_instances() {
   t('Reliefweb ID');
   t('Space(s)');
   t('Status');
-  t('Sync Disaster');
-  t('Sync this Disaster with ReliefWeb? If set, this disaster will always be updated to match with ReliefWeb. Leave this option empty to be able to edit, for example, the title later.');
   t('Title');
 
   return $field_instances;
