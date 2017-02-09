@@ -372,5 +372,18 @@ function hid_auth_oauthconnector_presets_alter(&$presets) {
     'data' => $hid_auth_local,
     'name' => 'Humanitarian.ID (local)',
   );
+
+  // Define overrides for the v2 dev environment.
+  $hid_auth_dev_v2 = clone $hid_auth_prod;
+  $hid_auth_dev_v2->name = 'hid_oauth';
+  $hid_auth_dev_v2->title = 'Humanitarian.ID v2 (dev)';
+  $hid_auth_dev_v2->url = 'https://api2.dev.humanitarian.id';
+  $hid_auth_dev_v2->mapping['fields']['uid']['resource'] = 'https://api2.dev.humanitarian.id/account.json';
+  $hid_auth_dev_v2->mapping['fields']['email']['resource'] = 'https://api2.dev.humanitarian.id/account.json';
+  $hid_auth_dev_v2->mapping['fields']['name']['resource'] = 'https://api2.dev.humanitarian.id/account.json';
+  $presets['hid_auth_dev_v2'] = array(
+    'data' => $hid_auth_dev_v2,
+    'name' => 'Humanitarian.ID v2 (dev)',
+  );
 }
 
