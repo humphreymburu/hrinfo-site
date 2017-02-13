@@ -11,67 +11,53 @@
  */
 ?>
 <div id="root">
-  <header id="header" class="header hidden-print" role="header">
-    <div class="container">
-      <div id="top">
-        <nav class="navbar navbar-default">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header top">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-            </div>
-
-            <div class="collapse navbar-collapse">
-              <?php print $hr_favorite_spaces; ?>
-              <ul id="hr-space-tab" class="nav nav-tabs navbar-left">
-                <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#"> MENU <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <?php print render($main_menu_dropdown); ?>
-                  </ul>
-                </li>
-                <?php if ($hr_tabs): ?>
-                  <?php $num_hr_tabs = count($hr_tabs); foreach ($hr_tabs as $i => $hr_tab) { ?>
-                    <li <?php if ($i == $num_hr_tabs - 1) { print 'class="active"'; } ?>><?php print $hr_tab; ?></li>
-                  <?php } ?>
-                <?php endif; ?>
-              </ul>
-              <div class="navbar-right">
-                <?php print render($page['top']); ?>
-              </div>
-            </div><!-- .navbar-collapse -->
-        </nav>
-      </div><!-- #top -->
-    </div><!-- .container -->
-    <div class="container-outer header">
-    <div class="container header">
-      <div id="branding">
-          <?php if ($logo): ?>
-            <a href="<?php print $front_page; ?>" id="logo">
-              <img src="<?php print $logo; ?>" alt="Humanitarianresponse Logo" />
-            </a>
-          <?php endif; ?>
-          <div class="pull-right">
-            <div id="header-image"><?php print $og_group_header_image; ?></div>
-            <?php print render($page['branding']); ?>
+  <header class="cd-hri-header hidden-print" role="banner">
+    <div class="cd-hri-global-header">
+      <div class="cd-hri-container cd-hri-global-header__inner container">
+        <div class="cd-hri-global-header__sites cd-hri-dropdown">
+          <button type="button" class="cd-hri-global-header__sites-btn" data-toggle="dropdown" id="cd-hri-related-platforms-toggle">
+            <?php print t('Related platforms'); ?>
+            <i class="fa fa-caret-down" aria-hidden="true"></i>
+          </button>
+          <ul class="cd-hri-dropdown-menu dropdown-menu" role="menu" id="cd-hri-related-platforms" aria-hidden="true" aria-labelledby="cd-hri-related-platforms-toggle">
+            <li><a href="https://fts.unocha.org/">Financial Tracking Services</a></li>
+            <li><a href="https://humdata.org/">Humanitarian Data Exchange</a></li>
+            <li><a href="https://humanitarian.id/">Humanitarian ID</a></li>
+            <li><a href="https://reliefweb.int/">ReliefWeb</a></li>
+          </ul>
+        </div>
+        <div class="cd-hri-global-header__nav">
+          <div class="cd-hri-nav cd-hri-nav--secondary">
+            <?php print $hr_favorite_spaces; ?>
+            <?php print render($page['top']); ?>
           </div>
+
+        </div>
       </div>
-      <div id="navigation">
-        <?php print render($page['navigation']); ?>
-      </div><!-- /.navigation -->
-    </div> <!-- /.container -->
-    </div> <!-- /.container-outer -->
+    </div>
+    <div class="cd-hri-site-header">
+      <div class="cd-hri-container cd-hri-site-header__inner container">
+        <a href="<?php print $front_page; ?>" class="cd-hri-site-header__logo">
+          <span class="sr-only">Humanitarian Response</span>
+        </a>
+        <div class="cd-hri-site-header__search">
+          <?php print render($page['branding']); ?>
+        </div>
+        <div class="cd-hri-dropdown">
+          <button type="button" id="cd-hri-nav-toggle" class="cd-hri-site-header__nav-toggle" data-toggle="dropdown">
+            <span class="cd-hri-site-header__nav-toggle-inner" aria-hidden="true">
+            </span>
+            <span class="sr-only"><?php print t('Main menu') ?></span>
+          </button>
+          <nav role="navigation" class="cd-hri-site-header__nav dropdown-menu" aria-labelledby="cd-hri-nav-toggle">
+            <ul class="cd-hri-nav cd-hri-nav--primary">
+              <?php print render($main_menu_dropdown); ?>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
   </header>
-
-  <?php if($is_front): ?>
-
-    <div id="front-banner"></div>
-
-  <?php endif; ?>
 
   <!-- Logo for printed pages -->
   <div class="visible-print-block pull-right">
@@ -124,40 +110,15 @@
 
 <footer id="footer" class="footer hidden-print" role="footer">
   <div class="container">
-    <div id="footer-first" class="col-md-3">
-      <p><?php print t('!hr_link is provided by UN OCHA to support humanitarian operations globally', array('!hr_link' => l('HumanitarianResponse.info', '<front>', array('attributes' => array('target' => '_blank'))))); ?> </p><p><?php print l(t('Learn more about HumanitarianResponse.info'), 'about', array('alias' => TRUE)); ?></p><p><?php print l(t('Read our Blog'), 'about/blog', array('alias' => TRUE)); ?></p><p><a href="http://www.unocha.org" target="_blank"><img alt="OCHA logo" src="/sites/all/themes/humanitarianresponse/assets/images/ocha.png"></a></p>
+    <div id="footer-first" class="col-md-4">
+      <p><?php print t('Service provided by'); ?><a href="http://www.unocha.org" target="_blank"><img alt="OCHA logo" src="/sites/all/themes/humanitarianresponse/assets/images/OCHA-logoWhite-22.svg"></a></p>
     </div>
-    <div id="footer-second" class="col-md-6">
-      <div class="col-md-3">
-        <div class="column"><a href="http://fts.unocha.org" target="_blank"><div class="footer-logo footer-logos-fts"></div></a></div>
-        <div class="column"><a href="https://humanitarian.id" target="_blank"><div class="footer-logo footer-logos-hid"></div></a></div>
-        <div class="column"><a href="http://www.gdacs.org" target="_blank"><div class="footer-logo footer-logos-gdacs"></div></a></div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="column"><a href="http://www.unocha.org/cerf/" target="_blank"><div class="footer-logo footer-logos-cerf"></div></a></div>
-        <div class="column"><a href="http://www.reliefweb.int/" target="_blank"><div class="footer-logo footer-logos-reliefweb"></div></a></div>
-        <div class="column"><a href="http://www.insarag.org/" target="_blank"><div class="footer-logo footer-logos-insarag"></div></a></div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="column"><a href="https://interagencystandingcommittee.org/" target="_blank"><div class="footer-logo footer-logos-iasc"></div></a></div>
-        <div class="column"><a href="http://www.redhum.org" target="_blank"><div class="footer-logo footer-logos-redhum"></div></a></div>
-        <div class="column"><a href="http://www.preventionweb.net/" target="_blank"><div class="footer-logo footer-logos-pw"></div></a></div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="column"><a href="<?php print variable_get('humdata_base_url', 'https://data.humdata.org'); ?>" target="_blank"><div class="footer-logo footer-logos-hdx"></div></a></div>
-        <div class="column"><a href="http://vosocc.unocha.org" target="_blank"><div class="footer-logo footer-logos-vosocc"></div></a></div>
-        <div class="column"><a href="http://www.worldhumanitariansummit.org" target="_blank"><div class="footer-logo footer-logos-whs"></div></a></div>
-      </div>
+    <div id="footer-second" class="col-md-4">
+      
     </div>
-    <div id = "footer-third" class="col-md-3">
-      <i class="fa fa-envelope"></i> <a href="mailto:info@humanitarianresponse.info">info@humanitarianresponse.info</a><br />
-      <i class="fa fa-question-circle"></i> <a href="mailto:help@humanitarianresponse.info">help@humanitarianresponse.info</a><br />
-      <i class="fa fa-info-circle"></i> <?php print l('humanitarianresponse.info', '<front>'); ?><br />
-      <i class="fa fa-rss-square"></i> <?php print l(t('RSS feed'), 'feed'); ?><br />
-      <i class="fa <?php ($follow_us_link_status == 'flag') ? print 'fa-check' : print 'fa-times'; ?>"></i> <?php print l($follow_us_link_title, $follow_us_link_href, array('attributes' => array('rel' => 'nofollow'))); ?>
+    <div id = "footer-third" class="col-md-4">
+      <p><?php print t('Except where otherwise noted, content on this site is licensed under a <a href="@creativecommons">Creative Commons Attribution 4.0</a> International license.', array(
+      '@creativecommons' => 'https://creativecommons.org/licenses/by/4.0/'))?></p>
     </div>
   </div>
 </footer>

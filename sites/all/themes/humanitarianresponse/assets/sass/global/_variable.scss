@@ -649,9 +649,12 @@ $container-lg:                 $container-large-desktop !default;
 
 //Palette couleurs
 
-$p-main: #bc2e3c;
-$p-comp-old: #54b1c8;
-$p-comp: #0fa4de;
+$p-main: #3d5d77;
+$p-main-variant: #1C304A;
+$p-comp: #0ac7d9;
+$p-comp-variant: #dfedf1;
+$p-tertiary: #333333;
+$p-tertiary-variant: #808080;
 
 $p-contacts: #a494d8;
 $p-documents: #27b298;
@@ -672,7 +675,7 @@ $images-path: '/sites/all/themes/humanitarianresponse/assets/images';
 $tabs-background: #E4E4E4;
 $tabs-active-background: #DBDBDB;
 $tabs-text: #A0A0A0;
-$tabs-active-text: #BC2E3C;
+$tabs-active-text: #3d5d77;
 
 
 

@@ -26,7 +26,7 @@ body {
 }
 
 body {
-  background: url(../images/BG_ocha.png) repeat-y top center #FFFFFF;
+  background: #F4F4F4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: $font-size-base;
@@ -44,7 +44,7 @@ body {
 }
 
 #root {
-  padding: 10px 0 0;
+  padding: 0;
 }
 
 a {
@@ -102,6 +102,10 @@ body div.messages {
   }
 }
 
+#messages {
+  margin-top: 10px;
+}
+
 //pager
 
 .pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus,
@@ -144,8 +148,9 @@ body table, body .table {
 
       th, .ui-widget-header {
         border: 0;
-        color: white;
-        background-color: $p-comp;
+        color: $p-main;
+		font-weight: bold;
+        background-color: $p-comp-variant;
         background-image: none;
         padding: 8px;
       }
@@ -220,7 +225,8 @@ body table, body .table {
 
 #footer {
   margin: 20px 0 0;
-  background-color: #F8F8F8;
+  background-color: $p-main;
+  color: white;
 
   @media screen and (max-width: $screen-md) {
     height: auto;
@@ -270,12 +276,29 @@ body table, body .table {
   }
 }
 
+.footer-logos-hdx { 
+  background-image: url('../images/footer-logos/hdx.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.footer-logos-hid { 
+  background-image: url('../images/footer-logos/hid.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: contain;
+}
+
 .page-header {
   border: none;
 }
 
+.main {
+  padding-top: 25px;
+}
+
 h1, h2, h3, h4, h5, h6 {
-  color: $p-comp;
+  color: $p-main;
   font-weight: bold;
 }
 

@@ -1,0 +1,67 @@
+//
+// Styles for Icons
+// --------------------------------------------------
+
+.icon-logistics, .icon-nutrition, .icon-protection, .icon-shelter, .icon-water, .icon-health, .icon-cccm, .icon-earlyrecovery, .icon-education, .icon-telecom, .icon-foodsecurity {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  margin-right: 1em;
+  vertical-align: middle;
+}
+
+.icon-logistics a:hover, .icon-logistics a:active {
+   background-color: $p-comp;
+   color: white;
+   padding: 8px 25px;
+   text-decoration: none;
+   display: inline-block;
+}
+
+
+.icon-logistics::before {
+  content: url(../images/Logistics-19.svg);
+  a:hover, a:active {
+	content: url(../images/Logistics-19.svg);
+}
+}
+
+.icon-nutrition::before {
+  content: url(../images/Nutrition-18.svg);
+}
+
+.icon-protection::before {
+  content: url(../images/Protection-09.svg);
+}
+
+.icon-shelter::before {
+  content: url(../images/Shelter-10.svg);
+}
+
+.icon-water::before {
+  content: url(../images/Wash-11.svg);
+}
+
+.icon-health::before {
+  content: url(../images/Health-12.svg);
+}
+
+.icon-cccm::before {
+  content: url(../images/CCCM-13.svg);
+}
+
+.icon-earlyrecovery::before {
+  content: url(../images/Earlyrecovery-14.svg);
+}
+
+.icon-education::before {
+  content: url(../images/Education-15.svg);
+}
+
+.icon-telecom::before {
+  content: url(../images/telecom-16.svg);
+}
+
+.icon-foodsecurity::before {
+  content: url(../images/foodsecurity-17.svg);
+}
