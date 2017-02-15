@@ -26,7 +26,7 @@ body {
 }
 
 body {
-  background: url(../images/BG_ocha.png) repeat-y top center #FFFFFF;
+  background: #F4F4F4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: $font-size-base;
@@ -44,7 +44,7 @@ body {
 }
 
 #root {
-  padding: 10px 0 0;
+  padding: 0;
 }
 
 a {
@@ -100,6 +100,10 @@ body div.messages {
   &.error {
     background: $p-main;
   }
+}
+
+#messages {
+  margin-top: 10px;
 }
 
 //pager
@@ -270,8 +274,25 @@ body table, body .table {
   }
 }
 
+.footer-logos-hdx { 
+  background-image: url('../images/footer-logos/hdx.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.footer-logos-hid { 
+  background-image: url('../images/footer-logos/hid.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: contain;
+}
+
 .page-header {
   border: none;
+
+  h1.title {
+    margin-top: 15px;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

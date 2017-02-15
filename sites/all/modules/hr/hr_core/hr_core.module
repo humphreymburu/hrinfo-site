@@ -371,6 +371,7 @@ function hr_core_form_node_form_alter(&$form, &$form_state) {
       if (isset($form['field_disasters'])) {
         $efq = new EntityFieldQuery();
         $results = $efq->entityCondition('entity_type', 'node')
+          ->propertyCondition('status', NODE_PUBLISHED)
           ->entityCondition('bundle', 'hr_disaster')
           ->fieldCondition('og_group_ref', 'target_id', $groups, 'IN')
           ->execute();
@@ -391,6 +392,7 @@ function hr_core_form_node_form_alter(&$form, &$form_state) {
       if (isset($form['field_coordination_hubs'])) {
         $efq = new EntityFieldQuery();
         $results = $efq->entityCondition('entity_type', 'node')
+          ->propertyCondition('status', NODE_PUBLISHED)
           ->entityCondition('bundle', 'hr_office')
           ->fieldCondition('og_group_ref', 'target_id', $groups, 'IN')
           ->execute();
@@ -849,6 +851,7 @@ function _hr_core_display_cache_content($minutes = 'none', $margin = 5) {
         'granularity' => array(
           'args' => 'args',
           'user_role' => 'user_role',
+          'context' => 'context',
         ),
         'granularity_url' => 'base_url_system',
         'granularity_roles_as_anon' => array(),
@@ -878,6 +881,7 @@ function _hr_core_display_cache_content_defaults($minutes = 'none', $margin = 5,
         'granularity' => array(
           'args' => 'args',
           'user_role' => 'user_role',
+          'context' => 'context',
         ),
         'granularity_url' => 'base_url_system',
         'granularity_roles_as_anon' => array(),
