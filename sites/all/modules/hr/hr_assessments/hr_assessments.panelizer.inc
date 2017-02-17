@@ -388,7 +388,10 @@ function hr_assessments_panelizer_defaults() {
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'above',
-      'formatter' => 'og_list_default',
+      'formatter' => 'entityreference_label',
+      'formatter_settings' => array(
+        'bypass_access' => 1,
+      ),
       'delta_limit' => '0',
       'delta_offset' => '0',
       'delta_reversed' => 0,
