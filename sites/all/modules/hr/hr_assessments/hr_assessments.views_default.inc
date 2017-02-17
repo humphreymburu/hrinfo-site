@@ -607,7 +607,7 @@ function hr_assessments_views_default_views() {
   $handler->display->display_options['path'] = 'assessments/list';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'List';
-  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['weight'] = '10';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $handler->display->display_options['tab_options']['weight'] = '10';
@@ -675,7 +675,7 @@ function hr_assessments_views_default_views() {
   $handler->display->display_options['path'] = 'assessments/table';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Table';
-  $handler->display->display_options['menu']['weight'] = '2';
+  $handler->display->display_options['menu']['weight'] = '20';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $handler->display->display_options['tab_options']['weight'] = '20';
