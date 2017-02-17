@@ -33,13 +33,13 @@ function hid_profiles_menu() {
     'file' => 'hid_profiles.pages.inc',
   );
 
-  $items['node/%node/hid_contacts'] = array(
+  /*$items['node/%node/hid_contacts'] = array(
     'title' => 'Contacts',
     'page callback' => 'hid_profiles_local_contacts',
     'page arguments' => array(1),
     'access arguments' => array('access hid_profiles'),
     'file' => 'hid_profiles.pages.inc',
-  );
+  );*/
 
   // Provide callback to get data on active operations.
   $items['hid/operations'] = array(
