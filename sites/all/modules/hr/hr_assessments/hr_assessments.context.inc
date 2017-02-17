@@ -38,6 +38,12 @@ function hr_assessments_context_default_contexts() {
           'region' => 'navigation',
           'weight' => '-10',
         ),
+        'views--exp-hr_assessments-global_list' => array(
+          'delta' => '-exp-hr_assessments-global_list',
+          'module' => 'views',
+          'region' => 'branding',
+          'weight' => '-10',
+        ),
         'current_search-hr_current_search' => array(
           'module' => 'current_search',
           'delta' => 'hr_current_search',
