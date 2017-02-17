@@ -91,13 +91,13 @@ function hr_assessments_menu() {
     'page callback' => 'hr_assessments_global_map',
     'type' => MENU_CALLBACK
   );
-  
+
   $items['assessments/global-map'] = array(
     'title' => 'Map',
     'access callback' => TRUE,
     'page callback' => 'hr_assessments_global_map',
     'type' => MENU_DEFAULT_LOCAL_TASK,
-    'weight' => 99,
+    'weight' => 0,
   );
 
   return $items;

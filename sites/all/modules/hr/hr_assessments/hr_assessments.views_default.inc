@@ -600,30 +600,17 @@ function hr_assessments_views_default_views() {
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
 
-  /* Display: Master */
-  $handler = $view->new_display('page', 'Master', 'global_master');
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'entity';
-  $handler->display->display_options['row_options']['view_mode'] = 'search_result';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['exposed_block'] = TRUE;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  $handler->display->display_options['path'] = 'assessments';
-
   /* Display: List */
   $handler = $view->new_display('page', 'List', 'global_list');
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['path'] = 'assessments/list';
-  $handler->display->display_options['menu']['type'] = 'default tab';
+  $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'List';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
-  $handler->display->display_options['tab_options']['weight'] = '0';
+  $handler->display->display_options['tab_options']['weight'] = '10';
 
   /* Display: Table */
   $handler = $view->new_display('page', 'Table', 'global_table');
@@ -691,7 +678,7 @@ function hr_assessments_views_default_views() {
   $handler->display->display_options['menu']['weight'] = '2';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
-  $handler->display->display_options['tab_options']['weight'] = '0';
+  $handler->display->display_options['tab_options']['weight'] = '20';
   $translatables['hr_assessments'] = array(
     t('Master'),
     t('more'),

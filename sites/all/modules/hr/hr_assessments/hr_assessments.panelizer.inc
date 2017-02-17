@@ -635,9 +635,6 @@ function hr_assessments_panelizer_defaults() {
       'delta_limit' => '0',
       'delta_offset' => '0',
       'delta_reversed' => 0,
-      'formatter_settings' => array(
-        'link' => 1,
-      ),
       'context' => 'panelizer',
       'override_title' => 0,
       'override_title_text' => '',

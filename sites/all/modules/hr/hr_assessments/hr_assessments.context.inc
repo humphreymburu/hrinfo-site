@@ -19,7 +19,7 @@ function hr_assessments_context_default_contexts() {
   $context->conditions = array(
     'views' => array(
       'values' => array(
-        'hr_assessments:global_master' => 'hr_assessments:global_master',
+        'hr_assessments:global_list' => 'hr_assessments:global_list',
       ),
     ),
   );
