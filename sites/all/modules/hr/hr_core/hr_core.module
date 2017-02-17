@@ -932,3 +932,30 @@ function _hr_core_fix_entity_reference_ajax_calls(&$form, &$form_state) {
     }
   }
 }
+
+/**
+ * Helper to render multiple input fields.
+ */
+function _hr_core_render_multiple_input_lines($field_name, $items_count, &$form, &$form_state) {
+  if (!isset($form[$field_name])) {
+    return;
+  }
+
+  $field_language = $form[$field_name]['#language'];
+  $form_theme = $form[$field_name][$field_language]['#theme'];
+
+  // Remove delete and add more buttons.
+  $form[$field_name][$field_language][0]['remove_button']['#access'] = FALSE;
+  $form[$field_name][$field_language]['add_more']['#access'] = FALSE;
+
+  $items = &$form_state['field'][$field_name][$field_language];
+
+  // Generate required number of fields collection.
+  if ($items_count > 1 and $items['items_count'] != $items_count) {
+    $items['items_count'] = $items_count;
+    $items['field']['cardinality'] = $items_count;
+    $form[$field_name][$field_language] += field_multiple_value_form($items['field'], $items['instance'], $field_language, array(), $form, $form_state);
+    // Reset theme function.
+    $form[$field_name][$field_language]['#theme'] = $form_theme;
+  }
+}

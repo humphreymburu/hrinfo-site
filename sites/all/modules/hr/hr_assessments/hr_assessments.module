@@ -141,7 +141,7 @@ function hr_assessments_form_hr_assessment_node_form_alter(&$form, &$form_state)
   if (!isset($form['#node']->nid)) {
     $items_count = 4;
     $field_name = 'field_locations';
-    _hr_document_render_multiple_input_lines($field_name, $items_count, $form, $form_state);
+    _hr_core_render_multiple_input_lines($field_name, $items_count, $form, $form_state);
   }
 
   // If it's a clone, validate the title.
