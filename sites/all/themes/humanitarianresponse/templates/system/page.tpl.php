@@ -59,23 +59,6 @@
     </div>
   </header>
 
-  <?php if ($hr_tabs): ?>
-    <div class="container">
-      <div class="col-sm-12">
-        <ul class="breadcrumbs">
-          <li class="breadcrumbs-item">
-            <a href="<?php print $front_page; ?>">
-              <?php print t('Home') ?>
-            </a>
-          </li>
-          <?php $num_hr_tabs = count($hr_tabs); foreach ($hr_tabs as $i => $hr_tab) { ?>
-            <li class="breadcrumbs-item <?php if ($i == $num_hr_tabs - 1) { print ' active'; } ?>"><?php print $hr_tab; ?></li>
-          <?php } ?>
-        </ul>
-      </div>
-    </div>
-  <?php endif; ?>
-
   <div id="secondary-navigation">
     <div class="container">
       <?php print render($page['navigation']); ?>
