@@ -208,3 +208,24 @@ function hr_assessments_clone_node_alter(&$node, $context) {
   unset($node->field_asst_data);
   unset($node->field_related_content);
 }
+
+function hr_assessments_block_info() {
+  return array(
+    'hr_assessment_create' => array(
+      'info' => t('Assessment Create link'),
+    )
+  );
+}
+
+function hr_assessments_block_view($delta = '') {
+  switch($delta) {
+    case 'hr_assessment_create':
+      $block['content'] = '<div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          <i class="fa fa-plus-square"></i>
+        </button>
+        <ul class="dropdown-menu" role="menu"><li>'.l(t('Assessment'), 'node/add/hr-assessment').'</ul></div>';
+      break;
+  }
+  return $block;
+}
