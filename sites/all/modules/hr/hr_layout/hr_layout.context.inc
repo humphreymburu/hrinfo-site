@@ -81,6 +81,12 @@ function hr_layout_context_default_contexts() {
           'region' => 'top',
           'weight' => '-5',
         ),
+        'hr_assessments-hr_assessment_create' => array(
+          'delta' => 'hr_assessment_create',
+          'module' => 'hr_assessments',
+          'region' => 'top',
+          'weight' => -2,
+        ),
         'locale-language' => array(
           'module' => 'locale',
           'delta' => 'language',
