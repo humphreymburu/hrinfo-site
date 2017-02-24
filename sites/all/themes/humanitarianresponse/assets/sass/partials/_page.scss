@@ -131,52 +131,38 @@ body div.messages {
 
 //table
 
-body table, body .table {
+// body table, body .table {
 
-  table-layout: fixed;
-  word-wrap: break-word;
+//   table-layout: fixed;
+//   word-wrap: break-word;
 
-  &.table-bordered {
-    border-color: white;
-  }
+//   thead {
 
-  thead {
+//     tr {
+//       border: 0;
+//     }
+//   }
 
-    tr {
+//   tbody {
 
-      border: 0;
+//     border: 0;
 
-      th, .ui-widget-header {
-        border: 0;
-        color: $p-main;
-		font-weight: bold;
-        background-color: $p-comp-variant;
-        background-image: none;
-        padding: 8px;
-      }
-    }
-  }
+//     tr {
 
-  tbody {
+//       border: 0;
 
-    border: 0;
+//       td {
+//         border: 0;
+//         border-color: #FFFFFF;
+//       }
 
-    tr {
+//     }
+//   }
+// }
 
-      border: 0;
-
-      td {
-        border: 0;
-        border-color: #FFFFFF;
-      }
-
-    }
-  }
-}
-
-.form-item table {
-  table-layout: auto;
-}
+// .form-item table {
+//   table-layout: auto;
+// }
 
 // Front page
 .front {

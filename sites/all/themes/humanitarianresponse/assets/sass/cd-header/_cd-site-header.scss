@@ -137,21 +137,30 @@
     position: absolute;
     left: 0;
     top: 50%;
-    margin-top: -$cd-base-unit*1.5;
-    width: $cd-base-unit*2.5;
-    height: $cd-base-unit*2.5;
+    margin-top: -11px;
+    width: $cd-base-unit*2;
+    height: $cd-base-unit*2;
+    margin-left: $cd-base-unit/2;
 
     &:focus {
       outline: none;
       background: $cd-primary-color;
     }
 
-    button {
-      width: 100%;
-      height: 100%;
+    button.btn-default {
+      margin: 0;
+      width: auto;
+      height: auto;
+      line-height: 1;
       color: $cd-primary-color;
       padding: 0;
     }
+
+    .fa-search {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
   }
 }
 

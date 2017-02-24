@@ -1,111 +1,110 @@
 // Styles for search sidebars and results.
 
 #sidebar-first {
+  .block-facetapi {
+    padding: 0;
+    background: white;
+    border-bottom: 1px solid $border-grey;
+    margin: 0 15px;
 
-  .block {
-    &.block-facetapi {
+    h2 {
+      color: black;
+      cursor: pointer;
+      position: relative;
+      margin: 0;
+      padding: 15px 10px;
+      color: $p-main;
+      font-size: 14px;
+      @extend .icon-arrow-down;
 
-      padding: 0;
-      border-top: 1px solid #FEFEFE;
-      border-bottom: 1px solid #d8d8d8;
-
-      h2 {
-        color: black;
-        cursor: pointer;
-        background: url(../images/facet-down.png) no-repeat right center transparent;
-
-        &.opened {
-          background-image: url(../images/facet-up.png);
-        }
+      &:before {
+        font-family: 'unocha-icons' !important;
+        line-height: 1;
+        position: absolute;
+        right: 10px;
+        font-weight: bold;
       }
 
-      .content {
+      &:hover, &:focus {
+        background-color: $p-comp-variant;
+      }
 
-        display: none;
+      &.opened {
+        @extend .icon-arrow-up;
+        background-color: $p-comp-variant;
+      }
+    }
 
-        ul {
-          list-style: none;
-          list-style-type: none;
-          list-style-image: none;
+    .content {
+      padding: 0 10px 5px 10px;
+      display: none;
+    }
 
-          li {
-            list-style: none;
-            list-style-type: none;
-            list-style-image: none;
-            position: relative;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 13px;
 
-            a {
-              color: black;
-              padding-left: 6px;
+      li {
+        position: relative;
+        list-style: none;
+
+        a {
+          color: $p-main;
+          display: block;
+          margin: 10px 0;
+          line-height: 1;
+          position: relative;
+
+          &:hover {
+            text-decoration: none;
+            color: $p-dark-text;
+          }
+
+          &.facetapi-inactive {
+            padding-left: 20px;
+
+            &:after {
+              content: "";
               display: block;
-              &:hover {
-                background-color: rgba(0, 0, 0, 0.1);
-              }
+              width: 15px;
+              height: 15px;
+              border: 1px solid $border-grey;
+              margin-right: 5px;
+              position: absolute;
+              left: 0;
+              top: 1px;
+            }
+          }
 
-              &.facetapi-active {
-                display: inline;
-                padding-right: 6px;
-              }
+          &.facetapi-active, &.facetapi-inactive:hover {
+            @extend .icon-check;
 
-              &.facetapi-inactive {
-                @include checks-sprite(check_off);
-                display: inline-block;
-                padding-left: 14px;
-                max-height: 11px;
-              }
-
-              &.facetapi-inactive:hover {
-                @include checks-sprite(check_on);
-              }
+            &:before {
+              font-family: 'unocha-icons' !important;
+              line-height: 1;
+              font-weight: bold;
+              color: $p-comp;
+              position: absolute;
+              left: 1px;
             }
 
-            &.redactive {
-              color: $p-main;
-              > a {
-                color: $p-main;
-                width: 11px;
-                height: 14px;
-                @include checks-sprite(check_on);
-                display: inline-block;
-                text-indent: -9999px;
-              }
-
-              > a:hover {
-                @include checks-sprite(check_off);
-              }
+            &:after {
+              border-color: $p-comp;
             }
           }
         }
 
-      }
-    }
+        .item-list {
+          padding-left: 20px;
+        }
 
-  }
-
-  .current-search-filter {
-    background: url(../images/currentfilter.png) no-repeat right 12% transparent;
-    height: 37px;
-
-      // Workaround to complete the image above.
-      &:before {
-        background-color: #FFF;
-        width: 1px;
-        display: block;
-        content: '';
-        height: 33px;
-        position: absolute;
-      }
-
-      p {
-        line-height: 37px;
-        margin-left: 10px;
-
-        .items {
-          font-weight: bold;
-          color: $p-main;
+        .facetapi-limit-link {
+          padding: 15px 20px;
         }
       }
-
+    }
   }
 
   .text-search {
@@ -126,64 +125,79 @@
   }
 
   .block-current-search {
+    padding: 0;
+    margin: 0 15px;
+    background: $p-comp;
+    color: $p-dark-text;
 
-      .current-reset-filter {
-        height: 33px;
-        line-height: 36px;
-        color: $p-main;
+    .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 10px;
+      font-size: 14px;
 
-        a {
-          height: 28px;
-          width: 19px;
-          background: url(../images/cross.png) no-repeat center bottom rgba(0, 0, 0, 0);
-          float: left;
-          margin-right: 5px
+      p {
+        margin: 0;
+      }
+    }
+
+    .current-reset-filter {
+
+      a {
+        padding: 0;
+        display: block;
+        color: $p-dark-text;
+        font-weight: bold;
+
+        @extend .icon-cancel;
+
+        &:before {
+          font-family: 'unocha-icons' !important;
+          line-height: 1;
+        }
+
+        &:hover, &:focus {
+          text-decoration: none;
+          color: white;
         }
       }
 
-      .current-search-item-active {
-        margin-top: 10px;
-        margin-bottom: -8px;
-        .current-selected-item {
-          color: #BC2E3C;
-          list-style: none outside none;
-          li {
-            margin-left: 0;
-            line-height: 22px;
-            color: black;
-            font-size: 0.8em;
-            a {
-              margin-right: 6px;
-              display: inline-block;
-              *display: inline;
-              *zoom: 1;
-              width: 18px;
-              height: 18px;
-              font-size: 0;
-              background: url(../images/bgfilteractive.png) no-repeat center center transparent
-            }
-          }
-        }
+      span {
+        position: absolute;
+        left: -9999999px;
       }
 
-      .current-search-item-results {
-        .current-search-filter {
-          line-height: 20px;
-          font-weight: normal;
-          .facetapi-active {
-            font-weight: bold;
-            color: $p-main;
+      i {
+        display: none;
+      }
+    }
+
+    .current-search-item-active {
+      margin-top: 10px;
+      margin-bottom: -8px;
+      .current-selected-item {
+        color: #BC2E3C;
+        list-style: none outside none;
+        li {
+          margin-left: 0;
+          line-height: 22px;
+          color: black;
+          font-size: 0.8em;
+          a {
+            margin-right: 6px;
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            width: 18px;
+            height: 18px;
+            font-size: 0;
+            background: url(../images/bgfilteractive.png) no-repeat center center transparent
           }
         }
       }
     }
-
-    a {
-      padding-left: 0;
-      color: #BC2E3C;
-      padding-right: 2px;
-    }
-
+  }
 }
 
 #block-current-search-hr-current-search {

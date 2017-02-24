@@ -1,0 +1,93 @@
+@font-face {
+  font-family: 'unocha-icons';
+  src:  url('../fonts/icons/unocha-icons.eot?40ocgv');
+  src:  url('../fonts/icons/unocha-icons.eot?40ocgv#iefix') format('embedded-opentype'),
+    url('../fonts/icons/unocha-icons.ttf?40ocgv') format('truetype'),
+    url('../fonts/icons/unocha-icons.woff?40ocgv') format('woff'),
+    url('../fonts/icons/unocha-icons.svg?40ocgv#unocha-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"], [class*=" fa-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'unocha-icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-wash:before {
+  content: "\e902";
+}
+.icon-telecom:before {
+  content: "\e903";
+}
+.icon-shelter:before {
+  content: "\e904";
+}
+.icon-protection:before {
+  content: "\e906";
+}
+.icon-nutrition:before {
+  content: "\e907";
+}
+.icon-logistics:before {
+  content: "\e908";
+}
+.icon-health:before {
+  content: "\e909";
+}
+.icon-foodsecurity:before {
+  content: "\e90a";
+}
+.icon-education:before {
+  content: "\e90b";
+}
+.icon-early-recovery:before {
+  content: "\e900";
+}
+.icon-cccm:before {
+  content: "\e901";
+}
+.icon-arrow-up:before {
+  content: "\e957";
+}
+.icon-arrow-down:before, .fa-caret-down:before, .caret:before {
+  content: "\e958";
+}
+.icon-user:before {
+  content: "\e955";
+}
+.icon-check:before {
+  content: "\e944";
+}
+.icon-cancel:before {
+  content: "\e94a";
+}
+.icon-mail:before {
+  content: "\e905";
+}
+.icon-search:before, .fa-search:before {
+  content: "\e919";
+}
+
+.icon-inbox-download:before, .fa-download:before {
+  content: "\e916";
+}
+
+.caret {
+  border: none;
+  margin: 0;
+  font-family: 'unocha-icons' !important;
+  line-height: 1;
+  width: auto;
+  height: auto;
+}

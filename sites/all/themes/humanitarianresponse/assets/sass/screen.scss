@@ -23,7 +23,8 @@
 
 // Theme CSS
 // --------------------------------------------------
-@import "global/font";
+// @import "global/font";
+@import "global/icons";
 @import "partials/comment";
 @import "partials/contacts";
 @import "partials/form";
@@ -38,6 +39,7 @@
 @import "partials/user";
 @import "partials/view";
 @import "partials/breadcrumbs";
+@import "partials/tables";
 @import "cd-header/cd-header";
 
 
