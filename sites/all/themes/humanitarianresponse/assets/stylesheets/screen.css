@@ -3240,33 +3240,6 @@ label { display: block; }
 
 form .table-responsive { overflow-x: inherit; }
 
-.icon-logistics, .icon-nutrition, .icon-protection, .icon-shelter, .icon-water, .icon-health, .icon-cccm, .icon-earlyrecovery, .icon-education, .icon-telecom, .icon-foodsecurity { display: inline-block; width: 2em; height: 2em; margin-right: 1em; vertical-align: middle; }
-
-.icon-logistics a:hover, .icon-logistics a:active { background-color: #0ac7d9; color: white; padding: 8px 25px; text-decoration: none; display: inline-block; }
-
-.icon-logistics::before { content: url(../images/Logistics-19.svg); }
-.icon-logistics::before a:hover, .icon-logistics::before a:active { content: url(../images/Logistics-19.svg); }
-
-.icon-nutrition::before { content: url(../images/Nutrition-18.svg); }
-
-.icon-protection::before { content: url(../images/Protection-09.svg); }
-
-.icon-shelter::before { content: url(../images/Shelter-10.svg); }
-
-.icon-water::before { content: url(../images/Wash-11.svg); }
-
-.icon-health::before { content: url(../images/Health-12.svg); }
-
-.icon-cccm::before { content: url(../images/CCCM-13.svg); }
-
-.icon-earlyrecovery::before { content: url(../images/Earlyrecovery-14.svg); }
-
-.icon-education::before { content: url(../images/Education-15.svg); }
-
-.icon-telecom::before { content: url(../images/telecom-16.svg); }
-
-.icon-foodsecurity::before { content: url(../images/foodsecurity-17.svg); }
-
 div.region-top div.block { display: inline-block; }
 
 #sidebar-first { margin-bottom: 15px; padding: 0; }
@@ -3565,7 +3538,7 @@ html, body { height: 100%; }
 html #header, body #header { margin-top: 0; }
 html #footer, body #footer { margin: 0; }
 
-body { background: #F4F4F4; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-size: 13px; }
+body { background: #FFF; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-size: 13px; }
 
 .container-outer.header { background-color: #FFF; box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 4px; position: relative; }
 
@@ -3820,6 +3793,15 @@ body .region-branding input.form-text:focus { border-color: #3d5d77; }
 .panel-pane.pane-block.pane-hr-operations-operations-dropdown h4 { background-image: url("../images/icons/38/Homepage/OperationsIcon38x38.png"); }
 .panel-pane.pane-block.pane-hr-operations-operations-dropdown p { margin-left: -15px; }
 
+.icons-list p { margin: 0; }
+.icons-list a { line-height: 1.2; display: block; overflow: auto; font-size: 16px; font-weight: normal; padding: 15px 15px 15px 60px; position: relative; border-bottom: 1px solid #f2f2f2; }
+.icons-list a [class^="icon-"], .icons-list a [class*=" icon-"] { font-size: 40px; color: #0ac7d9; position: absolute; left: 10px; top: 5px; }
+.icons-list a:hover, .icons-list a:focus { color: white !important; background: #0ac7d9; text-decoration: none; }
+.icons-list a:hover [class^="icon-"], .icons-list a:hover [class*=" icon-"], .icons-list a:focus [class^="icon-"], .icons-list a:focus [class*=" icon-"] { color: white; }
+
+@media (min-width: 768px) { .icons-list a { font-size: 24px; padding: 0 30px 0 70px; height: 90px; display: flex; align-items: center; }
+  .no-flexbox .icons-list a { padding: 30px 30px 30px 70px; height: auto; }
+  .icons-list a [class^="icon-"], .icons-list a [class*=" icon-"] { top: 25px; } }
 #sidebar-first .block-facetapi { padding: 0; background: white; border-bottom: 1px solid #d8d8d8; margin: 0 15px; }
 #sidebar-first .block-facetapi h2 { color: black; cursor: pointer; position: relative; margin: 0; padding: 15px 10px; color: #3d5d77; font-size: 14px; }
 #sidebar-first .block-facetapi h2:before { font-family: 'unocha-icons' !important; line-height: 1; position: absolute; right: 10px; font-weight: bold; }

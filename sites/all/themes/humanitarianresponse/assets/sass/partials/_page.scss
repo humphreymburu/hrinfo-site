@@ -26,7 +26,7 @@ body {
 }
 
 body {
-  background: #F4F4F4;
+  background: #FFF;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: $font-size-base;
@@ -128,41 +128,6 @@ body div.messages {
 .item-list ul.pagination > li span {
   @include border-radius(4px);
 }
-
-//table
-
-// body table, body .table {
-
-//   table-layout: fixed;
-//   word-wrap: break-word;
-
-//   thead {
-
-//     tr {
-//       border: 0;
-//     }
-//   }
-
-//   tbody {
-
-//     border: 0;
-
-//     tr {
-
-//       border: 0;
-
-//       td {
-//         border: 0;
-//         border-color: #FFFFFF;
-//       }
-
-//     }
-//   }
-// }
-
-// .form-item table {
-//   table-layout: auto;
-// }
 
 // Front page
 .front {

@@ -497,3 +497,62 @@
   }
 }
 
+
+.icons-list {
+
+  p {
+    margin: 0;
+  }
+  
+  a {
+    line-height: 1.2;
+    display: block;
+    overflow: auto;
+    font-size: 16px;
+    font-weight: normal;
+    padding: 15px 15px 15px 60px;
+    position: relative;
+    border-bottom: 1px solid lighten($border-grey,10%);
+
+    [class^="icon-"], [class*=" icon-"] {
+      font-size: 40px;
+      color: $p-comp;
+      position: absolute;
+      left: 10px;
+      top: 5px;
+    }
+
+    &:hover, &:focus {
+      color: white!important;
+      background: $p-comp;
+      text-decoration: none;
+
+      [class^="icon-"], [class*=" icon-"] {
+        color: white;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+
+  .icons-list {
+    a {
+      font-size: 24px;
+      padding: 0 30px 0 70px;
+      height: 90px;
+      display: flex;
+      align-items: center;
+
+      .no-flexbox & {
+        padding: 30px 30px 30px 70px;
+        height: auto;
+      }
+
+      [class^="icon-"], [class*=" icon-"] {
+        top: 25px;
+      }
+    }
+  }
+
+}
