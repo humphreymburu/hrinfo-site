@@ -74,7 +74,6 @@ features[og_features_role][] = node:hr_operation:contributor
 features[og_features_role][] = node:hr_operation:editor
 features[og_features_role][] = node:hr_operation:manager
 features[openlayers_maps][] = hr_operations
-features[page_manager_pages][] = hr_operations
 features[panelizer_defaults][] = node:hr_operation:default:default
 features[variable][] = entity_translation_hide_translation_links_hr_operation
 features[variable][] = entity_translation_node_metadata_hr_operation
