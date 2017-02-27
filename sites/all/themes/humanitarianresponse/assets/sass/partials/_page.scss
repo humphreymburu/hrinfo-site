@@ -67,11 +67,11 @@ a {
     }
   }
   
-  .footer-third & {
+  #footer-third & {
     color: $p-comp-variant;
     border-bottom: 1px solid $p-comp;
   }
-  .footer-third &:hover, .footer-third &:active {
+  #footer-third &:hover, #footer-third &:active {
     color: $p-comp;
     border-bottom: 1px solid $p-comp-variant;
   }
