@@ -3554,7 +3554,7 @@ a:hover { color: #2c4355; }
 a.btn { color: white; }
 a.btn.btn-default { color: #333; }
 #footer-third a { color: #dfedf1; border-bottom: 1px solid #0ac7d9; }
-#footer-third a:hover, #footer-third a:active { color: #0ac7d9; border-bottom: 1px solid #dfedf1; }
+#footer-third a:hover, #footer-third a:active { color: #0ac7d9; border-bottom: none; }
 
 p { margin: 0 0 20px; }
 
