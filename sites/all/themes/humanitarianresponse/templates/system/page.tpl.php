@@ -111,7 +111,7 @@
 <footer id="footer" class="footer hidden-print" role="footer">
   <div class="container">
     <div id="footer-first" class="col-md-4">
-      <p><?php print t('Service provided by'); ?><a href="http://www.unocha.org" target="_blank"><img alt="OCHA logo" src="/sites/all/themes/humanitarianresponse/assets/images/OCHA-logoWhite-22.svg"></a></p>
+      <p><?php print t('Service provided by'); ?><a href="http://www.unocha.org" target="_blank"><img width="200" alt="OCHA logo" src="/sites/all/themes/humanitarianresponse/assets/images/OCHA-logoWhite-22.svg"></a></p>
     </div>
     <div id="footer-second" class="col-md-4">
       
