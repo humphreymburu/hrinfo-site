@@ -113,49 +113,6 @@ function hr_spaces_views_default_views() {
     'topic' => 'topic',
   );
 
-  /* Display: Topics */
-  $handler = $view->new_display('page', 'Topics', 'initiatives');
-  $handler->display->display_options['path'] = 'topics';
-  $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Topics';
-  $handler->display->display_options['menu']['weight'] = '8';
-  $handler->display->display_options['menu']['name'] = 'main-menu';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
-
-  /* Display: Applications */
-  $handler = $view->new_display('page', 'Applications', 'applications');
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'hr_space' => 'hr_space',
-  );
-  /* Filter criterion: Content: Type (field_space_type) */
-  $handler->display->display_options['filters']['field_space_type_value']['id'] = 'field_space_type_value';
-  $handler->display->display_options['filters']['field_space_type_value']['table'] = 'field_data_field_space_type';
-  $handler->display->display_options['filters']['field_space_type_value']['field'] = 'field_space_type_value';
-  $handler->display->display_options['filters']['field_space_type_value']['value'] = array(
-    'application' => 'application',
-  );
-  $handler->display->display_options['path'] = 'applications';
-  $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Applications';
-  $handler->display->display_options['menu']['weight'] = '10';
-  $handler->display->display_options['menu']['name'] = 'main-menu';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
-
   /* Display: Programme Cycle */
   $handler = $view->new_display('panel_pane', 'Programme Cycle', 'panel_pane_1');
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
