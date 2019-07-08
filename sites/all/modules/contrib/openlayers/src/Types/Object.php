@@ -15,7 +15,7 @@ use Drupal\openlayers\Types\BaseInterface;
 /**
  * Class Object.
  */
-abstract class Object extends PluginBase implements BaseInterface {
+abstract class Base extends PluginBase implements BaseInterface {
   /**
    * A unique ID for the object.
    *
