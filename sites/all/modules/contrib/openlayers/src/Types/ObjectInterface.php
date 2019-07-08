@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Interface ObjectInterface.
+ * Interface BaseInterface.
  */
 
 namespace Drupal\openlayers\Types;
@@ -11,7 +11,7 @@ use Drupal\Component\Plugin\PluginInspectionInterface;
 /**
  * Interface openlayers_object_interface.
  */
-interface ObjectInterface extends PluginInspectionInterface {
+interface BaseInterface extends PluginInspectionInterface {
   /**
    * Initializes the object.
    */
@@ -56,7 +56,7 @@ interface ObjectInterface extends PluginInspectionInterface {
    * @param array $options
    *   The options array.
    *
-   * @return ObjectInterface
+   * @return BaseInterface
    *   The current object.
    */
   public function setOptions(array $options = array());
@@ -83,7 +83,7 @@ interface ObjectInterface extends PluginInspectionInterface {
    * @param mixed $value
    *   The value to set.
    *
-   * @return ObjectInterface
+   * @return BaseInterface
    *   The current object.
    */
   public function setOption($parents, $value = NULL);
@@ -159,10 +159,10 @@ interface ObjectInterface extends PluginInspectionInterface {
    *
    * @param array $build
    *   The array with the build information.
-   * @param \Drupal\openlayers\Types\ObjectInterface $context
+   * @param \Drupal\openlayers\Types\BaseInterface $context
    *   The context of the build. Mostly the map object.
    */
-  public function preBuild(array &$build, ObjectInterface $context = NULL);
+  public function preBuild(array &$build, BaseInterface $context = NULL);
 
   /**
    * Invoked after an objects render array is built.
@@ -171,10 +171,10 @@ interface ObjectInterface extends PluginInspectionInterface {
    *
    * @param array $build
    *   The array with the build information.
-   * @param \Drupal\openlayers\Types\ObjectInterface $context
+   * @param \Drupal\openlayers\Types\BaseInterface $context
    *   The context of the build. Mostly the map object.
    */
-  public function postBuild(array &$build, ObjectInterface $context = NULL);
+  public function postBuild(array &$build, BaseInterface $context = NULL);
 
   /**
    * Return an object, CTools Exportable.
@@ -265,7 +265,7 @@ interface ObjectInterface extends PluginInspectionInterface {
   /**
    * Return a flat array containing Openlayers Objects from the options array.
    *
-   * @return ObjectInterface[]
+   * @return BaseInterface[]
    *   Return a list of objects.
    */
   public function optionsToObjects();
@@ -310,7 +310,7 @@ interface ObjectInterface extends PluginInspectionInterface {
    * @param string $factory_service
    *   The object's factory service.
    *
-   * @return ObjectInterface
+   * @return BaseInterface
    *   The parent object.
    */
   public function setFactoryService($factory_service);
@@ -326,13 +326,13 @@ interface ObjectInterface extends PluginInspectionInterface {
   /**
    * Add an object into the collection of the parent object.
    *
-   * @param \Drupal\openlayers\Types\ObjectInterface $object
+   * @param \Drupal\openlayers\Types\BaseInterface $object
    *   The object to add.
    *
-   * @return ObjectInterface
+   * @return BaseInterface
    *   The parent object.
    */
-  public function addObject(ObjectInterface $object);
+  public function addObject(BaseInterface $object);
 
   /**
    * Remove an object from the collection.
@@ -340,7 +340,7 @@ interface ObjectInterface extends PluginInspectionInterface {
    * @param string $object_machine_name
    *   The machine name of the object to remove.
    *
-   * @return ObjectInterface
+   * @return BaseInterface
    *   The parent object.
    */
   public function removeObject($object_machine_name);
@@ -348,7 +348,7 @@ interface ObjectInterface extends PluginInspectionInterface {
   /**
    * Return all the dependencies objects of the parent object.
    *
-   * @return ObjectInterface[]
+   * @return BaseInterface[]
    *   The dependencies objects.
    */
   public function getDependencies();
@@ -367,7 +367,7 @@ interface ObjectInterface extends PluginInspectionInterface {
    * @param string $id
    *   The object ID.
    *
-   * @return ObjectInterface
+   * @return BaseInterface
    *   The parent object.
    */
   public function setId($id);

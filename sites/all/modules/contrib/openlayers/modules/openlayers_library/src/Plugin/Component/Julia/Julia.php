@@ -8,7 +8,7 @@ namespace Drupal\openlayers_library\Plugin\Component\Julia;
 use Drupal\openlayers\Component\Annotation\OpenlayersPlugin;
 use Drupal\openlayers\Openlayers;
 use Drupal\openlayers\Types\Component;
-use Drupal\openlayers\Types\ObjectInterface;
+use Drupal\openlayers\Types\BaseInterface;
 
 /**
  * Class Julia.
@@ -21,7 +21,7 @@ class Julia extends Component {
   /**
    * {@inheritdoc}
    */
-  public function postBuild(array &$build, ObjectInterface $context = NULL) {
+  public function postBuild(array &$build, BaseInterface $context = NULL) {
     $build = array(
       'map' => $build,
       'Julia' => array(

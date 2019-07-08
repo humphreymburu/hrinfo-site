@@ -9,7 +9,7 @@
  */
 
 namespace Drupal\openlayers\Plugin\Source\GoogleMaps;
-use Drupal\openlayers\Types\ObjectInterface;
+use Drupal\openlayers\Types\BaseInterface;
 use Drupal\openlayers\Types\Source;
 
 /**
@@ -63,7 +63,7 @@ class GoogleMaps extends Source {
   /**
    * {@inheritdoc}
    */
-  public function postBuild(array &$build, ObjectInterface $map = NULL) {
+  public function postBuild(array &$build, BaseInterface $map = NULL) {
     $styles = implode(array_map(function ($key) use ($map) {
       return $key . ':' . $map->getOption($key) . ';';
     }, array('width', 'height')));

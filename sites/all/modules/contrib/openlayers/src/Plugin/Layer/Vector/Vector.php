@@ -7,7 +7,7 @@
 namespace Drupal\openlayers\Plugin\Layer\Vector;
 use Drupal\openlayers\Component\Annotation\OpenlayersPlugin;
 use Drupal\openlayers\Types\Layer;
-use Drupal\openlayers\Types\ObjectInterface;
+use Drupal\openlayers\Types\BaseInterface;
 
 /**
  * Class Vector.
@@ -55,7 +55,7 @@ class Vector extends Layer {
   /**
    * {@inheritdoc}
    */
-  public function preBuild(array &$build, ObjectInterface $context = NULL) {
+  public function preBuild(array &$build, BaseInterface $context = NULL) {
     $layers = $context->getObjects('layer');
     foreach ($layers as $layer) {
       if (!in_array($layer->getFactoryService(), array('openlayers.Layer:Vector', 'openlayers.Layer:Heatmap'))) {

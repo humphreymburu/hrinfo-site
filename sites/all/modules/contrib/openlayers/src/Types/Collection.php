@@ -24,7 +24,7 @@ class Collection extends PluginBase {
   /**
    * The variable containing the objects.
    *
-   * @var ObjectInterface[] $objects
+   * @var BaseInterface[] $objects
    *   List of objects in this collection. The items have to be instances of
    *   \Drupal\openlayers\Types\Object.
    */
@@ -33,13 +33,13 @@ class Collection extends PluginBase {
   /**
    * Import a flat list of Openlayers Objects.
    *
-   * @param ObjectInterface[] $import
+   * @param BaseInterface[] $import
    *   The array of objects to import.
    */
   public function import(array $import = array()) {
-    array_walk($import, function (ObjectInterface $object_to_add) {
+    array_walk($import, function (BaseInterface $object_to_add) {
       $dependencies = $object_to_add->getCollection()->getFlatList();
-      array_walk($dependencies, function (ObjectInterface $object_dependency) {
+      array_walk($dependencies, function (BaseInterface $object_dependency) {
         $this->append($object_dependency);
       });
       $this->append($object_to_add);
@@ -53,7 +53,7 @@ class Collection extends PluginBase {
    *   Array of type to filter for. If set, only a list with objects of this
    *   type is returned.
    *
-   * @return \Drupal\openlayers\Types\ObjectInterface[]
+   * @return \Drupal\openlayers\Types\BaseInterface[]
    *   List of objects of this collection or list of a specific type of objects.
    */
   public function getFlatList(array $types = array()) {
@@ -83,20 +83,20 @@ class Collection extends PluginBase {
   /**
    * Add object to this collection.
    *
-   * @param ObjectInterface $object
+   * @param BaseInterface $object
    *   Object instance to add to this collection.
    */
-  public function append(ObjectInterface $object) {
+  public function append(BaseInterface $object) {
     $this->objects[$object->getType() . '_' . $object->getMachineName()] = $object;
   }
 
   /**
    * Remove object from this collection.
    *
-   * @param ObjectInterface $object
+   * @param BaseInterface $object
    *   Object instance to remove from this collection.
    */
-  public function delete(ObjectInterface $object) {
+  public function delete(BaseInterface $object) {
     unset($this->objects[$object->getType() . '_' . $object->getMachineName()]);
   }
 
@@ -164,7 +164,7 @@ class Collection extends PluginBase {
    *   Type to filter for. If set only a list with objects of this type is
    *   returned.
    *
-   * @return array|ObjectInterface[]
+   * @return array|BaseInterface[]
    *   List of objects of this collection or list of a specific type of objects.
    */
   public function getObjects($type = NULL) {
@@ -194,10 +194,10 @@ class Collection extends PluginBase {
   /**
    * Add object to this collection.
    *
-   * @param ObjectInterface $object
+   * @param BaseInterface $object
    *   Object instance to add to this collection.
    */
-  public function prepend(ObjectInterface $object) {
+  public function prepend(BaseInterface $object) {
     $this->objects = array_merge(array($object->getType() . '_' . $object->getMachineName() => $object), $this->objects);
   }
 
@@ -223,7 +223,7 @@ class Collection extends PluginBase {
    * @param string $id
    *   The id of the object to get.
    *
-   * @return false|\Drupal\openlayers\Types\ObjectInterface
+   * @return false|\Drupal\openlayers\Types\BaseInterface
    *   If found, returns the object. False otherwise.
    */
   public function getObjectById($type = array(), $id) {

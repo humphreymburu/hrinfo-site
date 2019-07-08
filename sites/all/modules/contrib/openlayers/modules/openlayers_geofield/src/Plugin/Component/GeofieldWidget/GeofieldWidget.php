@@ -10,7 +10,7 @@ use Drupal\openlayers\Openlayers;
 use Drupal\openlayers\Plugin\Source\Vector\Vector;
 use Drupal\openlayers\Types\Component;
 use Drupal\openlayers\Types\LayerInterface;
-use Drupal\openlayers\Types\ObjectInterface;
+use Drupal\openlayers\Types\BaseInterface;
 use geoPHP;
 
 /**
@@ -179,7 +179,7 @@ class GeofieldWidget extends Component {
   /**
    * {@inheritdoc}
    */
-  public function preBuild(array &$build, ObjectInterface $context = NULL) {
+  public function preBuild(array &$build, BaseInterface $context = NULL) {
     foreach ($context->getCollection()->getObjects('layer') as $layer) {
       if ($layer->getMachineName() == $this->getOption('editLayer', FALSE)) {
         if ($source = $layer->getSource()) {
@@ -195,7 +195,7 @@ class GeofieldWidget extends Component {
   /**
    * {@inheritdoc}
    */
-  public function postBuild(array &$build, ObjectInterface $context = NULL) {
+  public function postBuild(array &$build, BaseInterface $context = NULL) {
     $component = array(
       '#type' => 'container',
       '#attributes' => array(

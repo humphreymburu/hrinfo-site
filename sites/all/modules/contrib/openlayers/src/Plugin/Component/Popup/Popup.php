@@ -8,7 +8,7 @@ namespace Drupal\openlayers\Plugin\Component\Popup;
 use Drupal\openlayers\Component\Annotation\OpenlayersPlugin;
 use Drupal\openlayers\Openlayers;
 use Drupal\openlayers\Types\Component;
-use Drupal\openlayers\Types\ObjectInterface;
+use Drupal\openlayers\Types\BaseInterface;
 
 /**
  * Class Popup.
@@ -76,7 +76,7 @@ class Popup extends Component {
   /**
    * {@inheritdoc}
    */
-  public function preBuild(array &$build, ObjectInterface $context = NULL) {
+  public function preBuild(array &$build, BaseInterface $context = NULL) {
     parent::preBuild($build, $context);
 
     $layers = $this->getOption('layers', array());

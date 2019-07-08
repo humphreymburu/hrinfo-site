@@ -10,10 +10,10 @@
  *
  * @param array $build
  *   The render array that will be rendered later.
- * @param \Drupal\openlayers\Types\ObjectInterface $context
+ * @param \Drupal\openlayers\Types\BaseInterface $context
  *   The context, this will be an openlayers object.
  */
-function hook_openlayers_object_preprocess_alter(array &$build, \Drupal\openlayers\Types\ObjectInterface $context) {
+function hook_openlayers_object_preprocess_alter(array &$build, \Drupal\openlayers\Types\BaseInterface $context) {
 
 }
 
@@ -22,9 +22,9 @@ function hook_openlayers_object_preprocess_alter(array &$build, \Drupal\openlaye
  *
  * @param array $build
  *   The render array that will be rendered after this hook.
- * @param \Drupal\openlayers\Types\ObjectInterface $context
+ * @param \Drupal\openlayers\Types\BaseInterface $context
  *   The context, this will be an openlayers object.
  */
-function hook_openlayers_object_postprocess_alter(array &$build, \Drupal\openlayers\Types\ObjectInterface $context) {
+function hook_openlayers_object_postprocess_alter(array &$build, \Drupal\openlayers\Types\BaseInterface $context) {
 
 }

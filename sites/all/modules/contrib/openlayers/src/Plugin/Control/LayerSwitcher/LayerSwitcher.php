@@ -10,7 +10,7 @@ namespace Drupal\openlayers\Plugin\Control\LayerSwitcher;
 use Drupal\openlayers\Component\Annotation\OpenlayersPlugin;
 use Drupal\openlayers\Openlayers;
 use Drupal\openlayers\Types\Control;
-use Drupal\openlayers\Types\ObjectInterface;
+use Drupal\openlayers\Types\BaseInterface;
 
 /**
  * Class LayerSwitcher.
@@ -70,7 +70,7 @@ class LayerSwitcher extends Control {
   /**
    * {@inheritdoc}
    */
-  public function preBuild(array &$build, ObjectInterface $context = NULL) {
+  public function preBuild(array &$build, BaseInterface $context = NULL) {
     $map_id = $context->getId();
     $layers = $this->getOption('layers', array());
     $items = array();

@@ -5,7 +5,7 @@
  */
 
 namespace Drupal\openlayers;
-use Drupal\openlayers\Types\ObjectInterface;
+use Drupal\openlayers\Types\BaseInterface;
 
 /**
  * Class Openlayers.
@@ -77,7 +77,7 @@ class Openlayers {
    *   Type of object to load:
    *   map|layer|source|control|interaction|style|component.
    *
-   * @return \Drupal\openlayers\Types\ObjectInterface[]
+   * @return \Drupal\openlayers\Types\BaseInterface[]
    *   The array of objects.
    */
   public static function loadAll($object_type = NULL) {
@@ -99,12 +99,12 @@ class Openlayers {
    * @param array|string|object $export
    *   The exported object.
    *
-   * @return ObjectInterface|Error
+   * @return BaseInterface|Error
    *   Returns the instance of the requested object or an instance of
    *   Error on error.
    */
   public static function load($object_type = NULL, $export) {
-    /** @var \Drupal\openlayers\Types\ObjectInterface $object */
+    /** @var \Drupal\openlayers\Types\BaseInterface $object */
     $object = NULL;
     $configuration = array();
     $object_type = drupal_ucfirst(drupal_strtolower(check_plain($object_type)));
@@ -116,7 +116,7 @@ class Openlayers {
       $array_object = new \ArrayObject($export);
       $configuration = $array_object->getArrayCopy();
     }
-    if (is_object($export) && ($export instanceof ObjectInterface)) {
+    if (is_object($export) && ($export instanceof BaseInterface)) {
       return $export;
     }
     if (is_string($export)) {
@@ -190,10 +190,10 @@ class Openlayers {
   /**
    * Save an object in the database.
    *
-   * @param ObjectInterface $object
+   * @param BaseInterface $object
    *   The object to save.
    */
-  public static function save(ObjectInterface $object) {
+  public static function save(BaseInterface $object) {
     ctools_include('export');
     $configuration = $object->getConfiguration();
     $export = $object->getExport();

@@ -9,7 +9,7 @@ namespace Drupal\openlayers\Types;
 /**
  * Interface LayerInterface.
  */
-interface LayerInterface extends ObjectInterface {
+interface LayerInterface extends BaseInterface {
   /**
    * Returns the source of this layer.
    *

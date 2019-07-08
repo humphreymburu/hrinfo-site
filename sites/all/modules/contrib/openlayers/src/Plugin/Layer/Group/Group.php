@@ -9,7 +9,7 @@ use Drupal\openlayers\Component\Annotation\OpenlayersPlugin;
 use Drupal\openlayers\Openlayers;
 use Drupal\openlayers\Types\Layer;
 use Drupal\openlayers\Types\LayerInterface;
-use Drupal\openlayers\Types\ObjectInterface;
+use Drupal\openlayers\Types\BaseInterface;
 
 /**
  * Class Group.
@@ -198,7 +198,7 @@ class Group extends Layer {
   /**
    * {@inheritdoc}
    */
-  public function preBuild(array &$build, ObjectInterface $context = NULL) {
+  public function preBuild(array &$build, BaseInterface $context = NULL) {
     /** @var LayerInterface $layer */
     foreach ($context->getObjects('layer') as $layer) {
       $layer->setOption('title', $layer->getName());

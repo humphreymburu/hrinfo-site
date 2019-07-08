@@ -7,7 +7,7 @@
 namespace Drupal\openlayers\Plugin\Component\Debug;
 use Drupal\openlayers\Component\Annotation\OpenlayersPlugin;
 use Drupal\openlayers\Types\Component;
-use Drupal\openlayers\Types\ObjectInterface;
+use Drupal\openlayers\Types\BaseInterface;
 
 /**
  * Class Debug.
@@ -20,7 +20,7 @@ class Debug extends Component {
   /**
    * {@inheritdoc}
    */
-  public function postBuild(array &$build, ObjectInterface $context = NULL) {
+  public function postBuild(array &$build, BaseInterface $context = NULL) {
     $alternative_template = 'openlayers--' . str_replace('_', '-', $context->getMachineName()) . '.tpl.php';
 
     $build['parameters'][$this->getPluginId()] = array(
@@ -103,10 +103,10 @@ class Debug extends Component {
   /**
    * Array containing basic information about an OL Object.
    *
-   * @param \Drupal\openlayers\Types\ObjectInterface $object
+   * @param \Drupal\openlayers\Types\BaseInterface $object
    * @return array
    */
-  protected function getInfo(ObjectInterface $object) {
+  protected function getInfo(BaseInterface $object) {
     $js = $object->getJS();
 
     $info = array(

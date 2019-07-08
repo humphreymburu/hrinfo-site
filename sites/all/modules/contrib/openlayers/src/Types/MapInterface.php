@@ -9,7 +9,7 @@ namespace Drupal\openlayers\Types;
 /**
  * Interface MapInterface.
  */
-interface MapInterface extends ObjectInterface {
+interface MapInterface extends BaseInterface {
   /**
    * Returns the id of this map.
    *

@@ -8,7 +8,7 @@ namespace Drupal\openlayers_library\Plugin\Component\BlockLayerSwitcher;
 use Drupal\openlayers\Component\Annotation\OpenlayersPlugin;
 use Drupal\openlayers\Types\Component;
 use Drupal\openlayers\Types\MapInterface;
-use Drupal\openlayers\Types\ObjectInterface;
+use Drupal\openlayers\Types\BaseInterface;
 
 /**
  * Class BlockLayerSwitcher.
@@ -22,7 +22,7 @@ class BlockLayerSwitcher extends Component {
   /**
    * {@inheritdoc}
    */
-  public function postBuild(array &$build, ObjectInterface $context = NULL) {
+  public function postBuild(array &$build, BaseInterface $context = NULL) {
     if ($context instanceof MapInterface) {
       $olebs_blockswitcher_form = drupal_get_form('olebs_blockswitcher_form', $context);
       // This can rely in the id of the map instead of the css class.

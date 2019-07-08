@@ -10,12 +10,12 @@ use Drupal\Component\Plugin\PluginBase;
 use Drupal\openlayers\Config;
 use Drupal\openlayers\Openlayers;
 use Drupal\openlayers\Types\Collection;
-use Drupal\openlayers\Types\ObjectInterface;
+use Drupal\openlayers\Types\BaseInterface;
 
 /**
  * Class Object.
  */
-abstract class Object extends PluginBase implements ObjectInterface {
+abstract class Object extends PluginBase implements BaseInterface {
   /**
    * A unique ID for the object.
    *
@@ -193,7 +193,7 @@ abstract class Object extends PluginBase implements ObjectInterface {
   /**
    * {@inheritdoc}
    */
-  public function addObject(ObjectInterface $object) {
+  public function addObject(BaseInterface $object) {
     $this->setOption($object->getType() . 's', $this->getOption($object->getType() . 's', array()) + array($object->getMachineName()));
     $object->setWeight(count($this->getOption($object->getType() . 's', array())) + 2);
     $this->getCollection()->import(array($object));
@@ -323,7 +323,7 @@ abstract class Object extends PluginBase implements ObjectInterface {
   /**
    * {@inheritdoc}
    */
-  public function preBuild(array &$build, ObjectInterface $context = NULL) {
+  public function preBuild(array &$build, BaseInterface $context = NULL) {
     foreach ($this->getCollection()->getFlatList() as $object) {
       if ($object !== $this) {
         $object->preBuild($build, $context);
@@ -335,7 +335,7 @@ abstract class Object extends PluginBase implements ObjectInterface {
   /**
    * {@inheritdoc}
    */
-  public function postBuild(array &$build, ObjectInterface $context = NULL) {
+  public function postBuild(array &$build, BaseInterface $context = NULL) {
     foreach ($this->getCollection()->getFlatList() as $object) {
       if ($object !== $this) {
         $object->postBuild($build, $context);
