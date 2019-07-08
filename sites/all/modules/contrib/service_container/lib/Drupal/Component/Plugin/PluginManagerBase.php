@@ -60,15 +60,15 @@ abstract class PluginManagerBase implements PluginManagerInterface {
     // PluginNotFoundExceptions.
     if ($this instanceof FallbackPluginManagerInterface) {
       try {
-        return $this->factory->createInstance($plugin_id, $configuration);
+        return $this->getFactory()->createInstance($plugin_id, $configuration);
       }
       catch (PluginNotFoundException $e) {
         $fallback_id = $this->getFallbackPluginId($plugin_id, $configuration);
-        return $this->factory->createInstance($fallback_id, $configuration);
+        return $this->getFactory()->createInstance($fallback_id, $configuration);
       }
     }
     else {
-      return $this->factory->createInstance($plugin_id, $configuration);
+      return $this->getFactory()->createInstance($plugin_id, $configuration);
     }
   }
 
