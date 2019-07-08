@@ -9,7 +9,7 @@ namespace Drupal\openlayers\Types;
 use Drupal\Component\Plugin\PluginBase;
 use Drupal\openlayers\Component\Annotation\OpenlayersPlugin;
 use Drupal\openlayers\Openlayers;
-use Drupal\openlayers\Types/Base;
+use Drupal\openlayers\Types\Base;
 
 
 /**
@@ -26,7 +26,7 @@ class Collection extends PluginBase {
    *
    * @var BaseInterface[] $objects
    *   List of objects in this collection. The items have to be instances of
-   *   \Drupal\openlayers\Types/Base.
+   *   \Drupal\openlayers\Types\Base.
    */
   protected $objects = array();
 
